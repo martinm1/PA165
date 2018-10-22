@@ -16,6 +16,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Category {
 	
+
+    	@ManyToMany(mappedBy="categories")
+        private Set<Product> products = new HashSet<Product>();
+    
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -26,13 +30,13 @@ public class Category {
 	
 
 	//TODO after you are done with task02 you can uncomment this methods
-//	public void addProduct(Product product) {
-//		this.products.add(product);
-//	}
+	public void addProduct(Product product) {
+		this.products.add(product);
+	}
 //
-//	public Set<Product> getProducts() {
-//		return Collections.unmodifiableSet(products);
-//	}
+	public Set<Product> getProducts() {
+		return Collections.unmodifiableSet(products);
+	}
 
 	public Category(Long categoryId) {
 		this.id = categoryId; 
