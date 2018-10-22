@@ -40,7 +40,7 @@ public class Product {
             RED, GREEN, YELLOW, BLUE, BLACK;
         }
         
-        @Column(nullable=false,unique=true)
+        @Column(/*nullable=false,*/unique=true)
         @Past
         private java.util.Date addedDate;
         

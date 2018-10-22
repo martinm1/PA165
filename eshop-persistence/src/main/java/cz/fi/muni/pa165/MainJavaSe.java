@@ -11,9 +11,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import cz.fi.muni.pa165.entity.Category;
 import cz.fi.muni.pa165.entity.Product;
+import cz.fi.muni.pa165.entity.Product.Color;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import javax.persistence.PersistenceException;
 
 public class MainJavaSe {
 	private static EntityManagerFactory emf;
@@ -27,8 +29,8 @@ public class MainJavaSe {
 			// BEGIN YOUR CODE
 			//task04();
                         //task05();
-                        //task06();
-                        task08();
+                        task06();
+                        //task08();
 			// END YOUR CODE
 		} finally {
 			emf.close();
@@ -148,7 +150,7 @@ public class MainJavaSe {
                     product1.setName("Guitar");
                     product1.setColor(Product.Color.BLACK);
                     
-                    Calendar calendar = new GregorianCalendar(2011,1,20);	
+                    Calendar calendar = new GregorianCalendar(2011,0,20);	
                     
                     product1.setAddedDate(calendar.getTime());
  
@@ -167,7 +169,7 @@ public class MainJavaSe {
 		em.getTransaction().commit();
 		em.close();
 
-	/** TODO Uncomment the following test code after you are finished!
+	// TODO Uncomment the following test code after you are finished!
 	 
 		assertEq(p.getName(), "Guitar");
 		Calendar cal = Calendar.getInstance();
@@ -201,7 +203,7 @@ public class MainJavaSe {
 	
 
 		System.out.println("Task6 ok!");
-		*/
+		
 	}
 	
 	private static void task08() {
